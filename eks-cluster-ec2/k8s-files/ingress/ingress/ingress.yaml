@@ -3,7 +3,6 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: app-ingress
-  namespace: application
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
@@ -18,6 +17,9 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: app-service
+            name: blue-service
             port:
-              number: 80
+              number: 8000
+     
+      
+          
