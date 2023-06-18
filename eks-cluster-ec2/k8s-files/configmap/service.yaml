@@ -1,9 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: application
   name: my-app
-  namespace: application
   labels:
     app: my-app
 spec:
@@ -12,6 +10,6 @@ spec:
   - name: http
     port: 80
     targetPort: http
-    nodePort: 30002
   selector:
     app: my-app
+    
